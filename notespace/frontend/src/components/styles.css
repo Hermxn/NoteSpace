@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* Медиа-запросы для различных размеров экрана */
+@media screen and (max-width: 600px) {
+  .noteCard {
+    width: 90%; /* Пример: ширина карточки на узких экранах */
+    height: auto; /* Пример: автоматическая высота для масштабируемости */
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .noteCard {
+    width: 45%; /* Пример: ширина карточки на средних экранах */
+    height: auto; /* Пример: автоматическая высота для масштабируемости */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .noteCard {
+    width: 20%; /* Пример: ширина карточки на больших экранах */
+    height: auto; /* Пример: автоматическая высота для масштабируемости */
+  }
+}
+.noteWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+  align-items: center;
+}
+
+.noteCardTitle {
+  font-weight: bold !important;
+  font-size: 20px !important;
+  color: #962;
+}
+
+.noteCardBody {
+  font-size: 10px;
+  color: #666;
+}/*# sourceMappingURL=styles.css.map */
