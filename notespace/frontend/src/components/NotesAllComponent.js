@@ -14,6 +14,7 @@ export default function NotesAllComponent() {
           note={note}
           component={Link}
           url={`/notes/${note.id}`}
+          redire
         />
       ))}
     </div>

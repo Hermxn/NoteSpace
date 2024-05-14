@@ -1,3 +1,11 @@
+.noteCard {
+  a {
+    top: 0;
+    height: 80%;
+    border: 1px solid black;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .noteCard {
     width: 90%;
@@ -15,7 +23,7 @@
 @media screen and (min-width: 1025px) {
   .noteCard {
     width: 20%;
-    height: auto;
+    height: 300px;
   }
 }
 
@@ -25,4 +33,9 @@
   justify-content: flex-start;
   gap: 15px;
   align-items: center;
+}
+
+.noteCardActionArea {
+  top: 0;
+  height: 100%;
 }
