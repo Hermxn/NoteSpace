@@ -4,39 +4,51 @@ import {
   Typography,
   CardActionArea,
   CardActions,
-  Button,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
 import "./styles.css";
-import endpoints from "../urls.json";
-import useDeleteData from "../funcs/useDeleteData";
+import { useState } from "react";
+import UserButtonDelete from "../buttons/userButtonDelete";
+import UserSaveButton from "../buttons/userButtonSave";
+import UserTextField from "../textfields/textField";
 
-export default function CardNote({ note, component, url }) {
-  const handleDelete = useDeleteData(`${endpoints.notes}${note.id}/`);
+export default function CardNote({ note, component, url, toBeEdited }) {
+  const [title, setTitle] = useState(note.title);
+  const [body, setBody] = useState(note.body);
 
   return (
     <Card className="noteCard">
       <div className="cardContentWrapper">
-        <CardActionArea
-          className="noteCardActionArea"
-          component={component}
-          to={url}
-        >
+        {!toBeEdited ? (
+          <CardActionArea
+            className="noteCardActionArea"
+            component={component}
+            to={url}
+          >
+            <CardContent className="noteCardContent">
+              <Typography className="noteCardTitle">{note.title}</Typography>
+              <Typography className="noteCardBody">{note.body}</Typography>
+            </CardContent>
+          </CardActionArea>
+        ) : (
           <CardContent className="noteCardContent">
-            <Typography className="noteCardTitle">{note.title}</Typography>
-            <Typography className="noteCardBody">{note.body}</Typography>
+            <UserTextField
+              value={title}
+              onchange={(event) => {
+                setTitle(event.target.value);
+              }}
+            />
+            <UserTextField
+              value={body}
+              onchange={(event) => {
+                setBody(event.target.value);
+              }}
+            />
           </CardContent>
-        </CardActionArea>
+        )}
       </div>
       <CardActions>
-        <Button
-          className="noteCardDeleteButton"
-          variant="outlined"
-          startIcon={<DeleteIcon />}
-          onClick={() => handleDelete()}
-        >
-          Delete
-        </Button>
+        <UserButtonDelete note={note} />
+        {toBeEdited && <UserSaveButton note={note} title={title} body={body} />}
       </CardActions>
     </Card>
   );

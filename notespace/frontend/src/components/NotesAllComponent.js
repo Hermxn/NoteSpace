@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import useFetchData from "../funcs/useFetchData";
 import CardNote from "../cards/CardNote";
-import endpoints from "../urls.json";
 import Navbar from "../navbar/navbar";
+import endpoints from "../urls.json";
 import "./styles.css";
 
 export default function NotesAllComponent() {
