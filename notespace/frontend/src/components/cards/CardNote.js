@@ -6,6 +6,7 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 import "./styles.css";
 import endpoints from "../../urls.json";
 import useDeleteData from "../../funcs/useDeleteData";
@@ -15,18 +16,25 @@ export default function CardNote({ note, component, url }) {
 
   return (
     <Card className="noteCard">
-      <CardActionArea
-        className="noteCardActionArea"
-        component={component}
-        to={url}
-      >
-        <CardContent className="noteCardContent">
-          <Typography className="noteCardTitle">{note.title}</Typography>
-          <Typography className="noteCardBody">{note.body}</Typography>
-        </CardContent>
-      </CardActionArea>
+      <div className="cardContentWrapper">
+        <CardActionArea
+          className="noteCardActionArea"
+          component={component}
+          to={url}
+        >
+          <CardContent className="noteCardContent">
+            <Typography className="noteCardTitle">{note.title}</Typography>
+            <Typography className="noteCardBody">{note.body}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </div>
       <CardActions>
-        <Button onClick={() => handleDelete()} size="small">
+        <Button
+          className="noteCardDeleteButton"
+          variant="outlined"
+          startIcon={<DeleteIcon />}
+          onClick={() => handleDelete()}
+        >
           Delete
         </Button>
       </CardActions>

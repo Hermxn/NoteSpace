@@ -7,14 +7,13 @@ export default function NotesAllComponent() {
   const { data: notes, error } = useFetchData(endpoints.notes);
 
   return (
-    <div className="noteWrapper">
+    <div className="wrapperNotesAll">
       {notes.map((note) => (
         <CardNote
           key={note.id}
           note={note}
           component={Link}
           url={`/notes/${note.id}`}
-          redire
         />
       ))}
     </div>
