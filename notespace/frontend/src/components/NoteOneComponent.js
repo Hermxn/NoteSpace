@@ -1,15 +1,20 @@
 import { Link, useParams } from "react-router-dom";
 import useFetchData from "../funcs/useFetchData";
-import CardNote from "./cards/CardNote";
+import CardNote from "../cards/CardNote";
 import endpoints from "../urls.json";
+import Navbar from "../navbar/navbar";
+import "./styles.css";
 
 export default function NoteComponent() {
   const { noteId } = useParams();
   const { data: note, error } = useFetchData(`${endpoints.notes}${noteId}/`);
 
   return (
-    <div className="noteWrapper">
-      <CardNote key={note.id} note={note} component={Link} url="#" />
+    <div className="wrapperApp">
+      <Navbar />
+      <div className="wrapperNotesAll">
+        <CardNote key={note.id} note={note} component={Link} url="#" />
+      </div>
     </div>
   );
 }

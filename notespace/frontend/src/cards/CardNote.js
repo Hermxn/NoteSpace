@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "./styles.css";
-import endpoints from "../../urls.json";
-import useDeleteData from "../../funcs/useDeleteData";
+import endpoints from "../urls.json";
+import useDeleteData from "../funcs/useDeleteData";
 
 export default function CardNote({ note, component, url }) {
   const handleDelete = useDeleteData(`${endpoints.notes}${note.id}/`);

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotesAllComponent from "./components/NotesAllComponent";
 import NoteOneComponent from "./components/NoteOneComponent";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

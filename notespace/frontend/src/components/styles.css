@@ -1,0 +1,10 @@
+.wrapperApp {
+  display: flex;
+}
+
+.wrapperNotesAll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}/*# sourceMappingURL=styles.css.map */

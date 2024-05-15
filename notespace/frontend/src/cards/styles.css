@@ -1,41 +1,10 @@
-.wrapperNotesAll {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.noteCard {
-  border: 1px solid black;
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.cardContentWrapper {
-  flex: 1;
-}
-
-.noteCardActionArea {
-  flex: 8;
-  height: 100%;
-  width: 100%;
-}
-
-.noteCardDeleteButton {
-  width: 100%;
-}
-
 @media screen and (max-width: 600px) {
   .noteCard {
     width: 100%;
     height: 150px;
   }
-  .noteCardContent {
-    p {
-      font-size: 0.5rem;
-      color: aqua;
-    }
+  .noteCardContent p {
+    font-size: 0.5rem;
   }
   .noteCardDeleteButton {
     height: 7vh;
@@ -48,20 +17,16 @@
   }
   .wrapperNotesAll {
     gap: 15px;
-    margin: 20vh 2vh 2vh 2vh;
+    margin: 2vh 2vh 2vh 2vh;
   }
 }
-
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .noteCard {
     width: 45%;
     height: 200px;
   }
-  .noteCardContent {
-    p {
-      font-size: 0.75rem;
-      color: maroon;
-    }
+  .noteCardContent p {
+    font-size: 0.75rem;
   }
   .noteCardDeleteButton {
     height: 7vh;
@@ -74,22 +39,34 @@
   }
   .wrapperNotesAll {
     gap: 15px;
-    margin: 2vh 2vh 2vh 20vh;
+    margin: 2vh 2vh 2vh 2vh;
   }
 }
-
 @media screen and (min-width: 1025px) {
   .noteCard {
     width: 30%;
     height: 300px;
   }
-  .noteCardContent {
-    p {
-      font-size: 1rem;
-    }
+  .noteCardContent p {
+    font-size: 1rem;
   }
   .wrapperNotesAll {
     gap: 30px;
-    margin: 2vh 2vh 2vh 20vh;
+    margin: 2vh 2vh 2vh;
   }
 }
+.noteCard {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cardContentWrapper {
+  flex: 1;
+}
+
+.noteCardActionArea {
+  height: 100%;
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

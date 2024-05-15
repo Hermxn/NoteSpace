@@ -1,0 +1,17 @@
+.wrapperNavbar {
+  margin: 1vw 0 1vw 1vw;
+  border: black solid 1px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav button {
+  margin: 1vh;
+  width: 90%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function useDeleteData(url, redirect, refresh) {
+export default function useDeleteData(url) {
   const deleteData = async () => {
     try {
       await axios.delete(url);
