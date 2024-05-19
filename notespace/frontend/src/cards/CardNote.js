@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -6,10 +7,10 @@ import {
   CardActions,
 } from "@mui/material";
 import "./styles.css";
-import { useState } from "react";
 import UserButtonDelete from "../buttons/userButtonDelete";
 import UserSaveButton from "../buttons/userButtonSave";
 import UserTextArea from "../textfields/textField";
+import RichTextField from "../textfields/richTextField";
 
 export default function CardNote({ note, component, url, toBeEdited }) {
   const [title, setTitle] = useState(note.title);
@@ -34,18 +35,14 @@ export default function CardNote({ note, component, url, toBeEdited }) {
             <Typography className="noteCardTitle">
               <UserTextArea
                 value={title}
-                onchange={(event) => {
-                  setTitle(event.target.value);
-                }}
+                onChange={(event) => setTitle(event.target.value)}
                 className="noteCardTitleTextField"
               />
             </Typography>
             <Typography className="noteCardBody">
-              <UserTextArea
+              <RichTextField
                 value={body}
-                onchange={(event) => {
-                  setBody(event.target.value);
-                }}
+                onChange={setBody}
                 className="noteCardBodyTextField"
               />
             </Typography>

@@ -1,6 +1,5 @@
-export default function UserTextArea({ value, onchange, className }) {
+export default function UserTextArea({ value, onChange, className }) {
   const textareaStyle = {
-    resize: "none",
     background: "transparent",
     border: "1px solid transparent",
     padding: "10px",
@@ -10,7 +9,7 @@ export default function UserTextArea({ value, onchange, className }) {
     <textarea
       style={textareaStyle}
       value={value}
-      onChange={onchange}
+      onChange={onChange}
       className={className}
     ></textarea>
   );
