@@ -10,9 +10,9 @@ export default function NoteComponent() {
   const { data: note, error } = useFetchData(`${endpoints.notes}${noteId}/`);
 
   return (
-    <div className="wrapperApp">
+    <div className="wrapperFlex">
       <Navbar />
-      <div className="wrapperNotesAll">
+      <div className="wrapperNoteOne">
         <CardNote key={note.id} note={note} toBeEdited />
       </div>
     </div>

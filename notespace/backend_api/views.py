@@ -20,5 +20,5 @@ class DiaryNoteViewSet(viewsets.ModelViewSet):
 
 
 class NoteViewSet(viewsets.ModelViewSet):
-    queryset = Note.objects.all()
+    queryset = Note.objects.all().order_by("-date_updated")
     serializer_class = NoteSerializer

@@ -1,3 +1,62 @@
+.noteCard {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardContentWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.noteCardContent {
+  height: 100%;
+  position: relative;
+  padding: 0 !important;
+}
+
+.noteCardTitle,
+.noteCardBody {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  font-size: 12px !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.noteCardTitle {
+  background-color: hsl(207, 23%, 68%);
+  text-overflow: ellipsis;
+  padding: 0.5em 0.5em 0 0.5em;
+  font-size: 14px !important;
+}
+
+.noteCardBody {
+  -webkit-line-clamp: 6;
+  padding: 0.5em 0.5em 0 0.5em;
+}
+
+.newNoteBody {
+  text-align: center;
+  font-size: 30px !important;
+}
+
+.MuiCardActions-root {
+  background-color: #f5efe6;
+}
+
+.noteCardContent {
+  background-color: #f5efe6;
+}
+
+.noteCardDeleteButton {
+  position: absolute;
+  z-index: 1;
+  height: 30px;
+}
+
 @media screen and (max-width: 600px) {
   .noteCard {
     width: 65vw;
@@ -6,9 +65,11 @@
   .noteCardDeleteButton {
     height: 8vh;
   }
-  .wrapperNotesAll {
-    gap: 15px;
-    margin: 2vh 2vh 2vh 2vh;
+  .noteCardTitle {
+    -webkit-line-clamp: 1;
+  }
+  .noteCardBody {
+    -webkit-line-clamp: 2;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -19,9 +80,11 @@
   .noteCardDeleteButton {
     height: 7vh;
   }
-  .wrapperNotesAll {
-    gap: 15px;
-    margin: 2vh 2vh 2vh 2vh;
+  .noteCardTitle {
+    -webkit-line-clamp: 1;
+  }
+  .noteCardBody {
+    -webkit-line-clamp: 5;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -29,28 +92,10 @@
     width: 25vw;
     height: 40vh;
   }
-  .wrapperNotesAll {
-    gap: 30px;
-    margin: 2vh 2vh 2vh;
+  .noteCardTitle {
+    -webkit-line-clamp: 2;
   }
-}
-.noteCard {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.cardContentWrapper {
-  flex: 1;
-}
-
-.noteCardActionArea {
-  height: 100%;
-  width: 100%;
-}
-
-.noteCardBody {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  .noteCardBody {
+    -webkit-line-clamp: 7;
+  }
 }/*# sourceMappingURL=styles.css.map */

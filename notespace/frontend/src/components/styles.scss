@@ -1,4 +1,28 @@
-.wrapperApp {
+@media screen and (max-width: 600px) {
+  .wrapperNoteOne {
+    .noteCard {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .wrapperNoteOne {
+    .noteCard {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .wrapperNoteOne {
+    .noteCard {
+      width: 80%;
+    }
+  }
+}
+
+.wrapperFlex {
   display: flex;
 }
 
@@ -7,4 +31,16 @@
   flex-wrap: wrap;
   justify-content: center;
   flex: 1;
+  margin: 2vh;
+  gap: 25px;
+}
+
+.wrapperNoteOne {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .noteCard {
+    margin: 1vw 0 0 10vw;
+    height: 95vh;
+  }
 }
