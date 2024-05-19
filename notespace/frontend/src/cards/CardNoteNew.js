@@ -4,7 +4,7 @@ export default function CardNoteNew({ url }) {
   return (
     <div className="CardNote">
       <a className="CardNoteHref CardNoteNewHref" href={url}>
-        Create note
+        <div className="CardContent">Create note</div>
       </a>
     </div>
   );

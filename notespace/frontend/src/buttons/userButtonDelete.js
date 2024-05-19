@@ -6,13 +6,13 @@ import endpoints from "../urls.json";
 export default function UserButtonDelete({ note }) {
   const handleDelete = useDeleteData(`${endpoints.notes}${note.id}/`);
   return (
-    <button
-      className="noteCardDeleteButton"
-      variant="outlined"
+    <Button
+      size="sm"
+      variant="Text"
       startIcon={<DeleteIcon />}
       onClick={() => handleDelete()}
     >
       Delete
-    </button>
+    </Button>
   );
 }

@@ -7,8 +7,8 @@ export default function UserSaveButton({ note, title, body }) {
   const handlePut = usePutData(`${endpoints.notes}${note.id}/`, title, body);
   return (
     <Button
-      className="noteCardDeleteButton"
-      variant="outlined"
+      size="sm"
+      variant="Text"
       startIcon={<SaveIcon />}
       onClick={() => handlePut()}
     >

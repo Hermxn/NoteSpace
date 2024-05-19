@@ -1,4 +1,16 @@
-@charset "UTF-8";
+:root {
+  --color1: #eae7dc;
+  --color2: #d8c3a5;
+  --color3: #8e8d8a;
+  --color4: #e98074;
+  --color5: #e85a4f;
+  --color6: #a4b3b6;
+  --color7: #c1c8e4;
+  --color8: #def2f1;
+  --color9: #a8d0e6;
+  --color10: #687864;
+}
+
 .CardNote {
   display: flex;
   flex-direction: column;
@@ -19,56 +31,66 @@
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  text-overflow: ellipsis;
   overflow: hidden;
+  transition: background-color 0.2s ease;
+  position: relative;
 }
 .CardContent p {
+  padding: 0 5px 0 5px;
   margin: 0;
 }
 
-.CardContentDate,
-.CardContentTitle,
-.CardContentBody {
+.CardContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 5px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease;
+  pointer-events: none;
+}
+
+.CardContent:hover::before {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .CardContentDate {
-  background-color: #a4b3b6;
+  background-color: var(--color6);
 }
 
 .CardContentTitle,
 .CardContentBody,
 .CardNoteAction {
-  background-color: #eae7dc;
+  background-color: var(--color1);
 }
 
-.CardContentTitle {
+.CardContentTitle,
+.CardNoteAction {
   display: -webkit-box;
-  -webkit-line-clamp: 1; /* Ограничение на 2 строки */
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  border-top: 1px solid black;
 }
 
 .CardContentBody {
   flex-grow: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 9; /* Ограничение количества строк */
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .CardNoteAction {
   height: 14%;
   position: relative;
+  display: flex;
+  justify-content: space-around;
 }
 
-.noteCardDeleteButton {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
+.CardNoteNewHref {
   height: 100%;
 }
 

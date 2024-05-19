@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import UserButtonDelete from "../buttons/userButtonDelete";
-import UserSaveButton from "../buttons/userButtonSave";
-import UserTextArea from "../textfields/textField";
-import RichTextField from "../textfields/richTextField";
+import UserButtonDelete from "../buttons/UserButtonDelete";
+import UserSaveButton from "../buttons/UserButtonSave";
+import TextField from "../textfields/UserTextField";
+import TextArea from "../textfields/UserTextArea";
 import "./styles.css";
 
 export default function CardNote({ note, url, toBeEdited }) {
@@ -26,12 +26,12 @@ export default function CardNote({ note, url, toBeEdited }) {
         </a>
       ) : (
         <div className="CardContent">
-          <UserTextArea
+          <TextField
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             className="noteCardTitleTextField"
           />
-          <RichTextField
+          <TextArea
             value={body}
             onChange={setBody}
             className="noteCardBodyTextField"
@@ -39,8 +39,8 @@ export default function CardNote({ note, url, toBeEdited }) {
         </div>
       )}
       <div className="CardNoteAction">
-        <UserButtonDelete note={note} />
         {toBeEdited && <UserSaveButton note={note} title={title} body={body} />}
+        <UserButtonDelete note={note} />
       </div>
     </div>
   );
