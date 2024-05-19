@@ -1,0 +1,28 @@
+.wrapperFlex {
+  display: flex;
+}
+
+.wrapperNotesAll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px;
+}
+
+.wrapperNoteOne {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wrapperNoteOne .noteCard {
+  margin: 1vw 0 1vw 0;
+  height: 95vh;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapperFlex {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=styles.css.map */

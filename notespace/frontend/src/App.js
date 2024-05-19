@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NotesAllComponent from "./components/NotesAllComponent";
-import NoteOneComponent from "./components/NoteOneComponent";
+import NoteAllPage from "./pages/NoteAllPage";
+import NoteOnePage from "./pages/NoteOnePage";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Routes>
         {/* <Route path="/" element={<Main />} /> */}
-        <Route path="notes" element={<NotesAllComponent />} />
-        <Route path="/notes/:noteId" element={<NoteOneComponent />} />
+        <Route path="notes" element={<NoteAllPage />} />
+        <Route path="/notes/:noteId" element={<NoteOnePage />} />
         {/* <Route path="diaries" element={<DiaryComponent />} />
         <Route path="todos" element={<TodoCOmponent />} /> */}
       </Routes>

@@ -1,107 +1,107 @@
-.noteCard {
-  border: 1px solid black;
-  border-radius: 15px !important;
+@charset "UTF-8";
+.CardNote {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  border-radius: 15px;
   overflow: hidden;
-  position: relative;
 }
 
-.cardContentWrapper {
-  display: flex;
-  flex: 1;
+.CardNoteHref {
+  text-decoration: none;
+  color: inherit;
+  height: 86%;
 }
 
-.noteCardContent {
+.CardContent {
   height: 100%;
-  width: 100%;
   position: relative;
-  padding: 0 !important;
-}
-
-.noteCardTitle,
-.noteCardBody {
-  overflow: hidden;
-  overflow-wrap: break-word;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-}
-
-.noteCardTitle {
-  background-color: hsl(207, 23%, 68%);
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
   text-overflow: ellipsis;
-  padding: 0.5em 0.5em 0 0.5em;
-  font-size: 14px !important;
+  overflow: hidden;
+}
+.CardContent p {
+  margin: 0;
 }
 
-.noteCardBody {
-  -webkit-line-clamp: 7;
-  padding: 0.5em 0.5em 0 0.5em;
-  height: 65%;
+.CardContentDate,
+.CardContentTitle,
+.CardContentBody {
+  width: 100%;
+  padding: 5px;
 }
 
-.newNoteBody {
-  text-align: center;
-  font-size: 30px !important;
+.CardContentDate {
+  background-color: #a4b3b6;
 }
 
-.MuiCardActions-root {
-  background-color: #f5efe6;
+.CardContentTitle,
+.CardContentBody,
+.CardNoteAction {
+  background-color: #eae7dc;
 }
 
-.noteCardContent {
-  background-color: #f5efe6;
+.CardContentTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Ограничение на 2 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CardContentBody {
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 9; /* Ограничение количества строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CardNoteAction {
+  height: 14%;
+  position: relative;
 }
 
 .noteCardDeleteButton {
   position: absolute;
-  z-index: 1;
-  height: 30px;
+  bottom: 5px;
+  left: 5px;
+  height: 100%;
 }
 
-@media screen and (max-width: 600px) {
-  .noteCard {
-    width: 65vw;
-    height: 65vh;
+@media screen and (max-width: 767px) {
+  .CardContent {
+    color: red;
   }
-  .noteCardDeleteButton {
-    height: 8vh;
-  }
-  .noteCardBodyTextField {
-    height: 2px;
-    max-height: 2px;
+  .CardNote {
+    height: 42vh;
+    width: 95vw;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .noteCard {
-    width: 35vw;
-    height: 55vh;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .CardContent {
+    color: yellow;
   }
-  .noteCardDeleteButton {
-    height: 7vh;
-  }
-  .noteCardBodyTextField {
-    height: 150px;
-    max-height: 150px;
-  }
-  .noteCardTitle {
-    height: 60px;
-  }
-  textarea {
-    height: 45px;
+  .CardNote {
+    height: 32vh;
+    width: 76vw;
   }
 }
-@media screen and (min-width: 1025px) {
-  .noteCard {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .CardContent {
+    color: green;
+  }
+  .CardNote {
+    height: 38vh;
+    width: 38vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .CardNote {
+    height: 47vh;
     width: 25vw;
-    height: 40vh;
   }
-  .noteCardBodyTextField {
-    height: 350px;
-    max-height: 350px;
-  }
-}
-.noteCardTitleTextField,
-.noteCardBodyTextField {
-  width: 100% !important;
 }/*# sourceMappingURL=styles.css.map */

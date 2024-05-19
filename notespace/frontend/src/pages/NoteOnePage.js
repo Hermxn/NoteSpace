@@ -1,11 +1,11 @@
+import "./styles.css";
 import { useParams } from "react-router-dom";
 import useFetchData from "../funcs/useFetchData";
-import CardNote from "../cards/CardNote";
 import Navbar from "../navbar/navbar";
 import endpoints from "../urls.json";
-import "./styles.css";
+import UserCardNote from "../cards/CardNote";
 
-export default function NoteComponent() {
+export default function NoteOnePage() {
   const { noteId } = useParams();
   const { data: note, error } = useFetchData(`${endpoints.notes}${noteId}/`);
 
@@ -13,7 +13,7 @@ export default function NoteComponent() {
     <div className="wrapperFlex">
       <Navbar />
       <div className="wrapperNoteOne">
-        <CardNote key={note.id} note={note} toBeEdited />
+        <UserCardNote key={note.id} note={note} toBeEdited />
       </div>
     </div>
   );

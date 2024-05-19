@@ -26,7 +26,7 @@ class Note(models.Model):
     date_updated: models.DateField = models.DateTimeField(auto_now=True)
     author: models.ForeignKey = models.ForeignKey(User, on_delete=models.CASCADE)
     title: models.CharField = models.CharField(max_length=100)
-    body: models.CharField = models.CharField(max_length=500)
+    body: models.CharField = models.CharField(max_length=1000)
 
     def __str__(self) -> str:
         return f"Author: {self.author}, Title: {self.title}, Date created: {self.date_created}"
