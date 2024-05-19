@@ -1,5 +1,6 @@
 .noteCard {
   border: 1px solid black;
+  border-radius: 15px !important;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -13,6 +14,7 @@
 
 .noteCardContent {
   height: 100%;
+  width: 100%;
   position: relative;
   padding: 0 !important;
 }
@@ -21,7 +23,6 @@
 .noteCardBody {
   overflow: hidden;
   overflow-wrap: break-word;
-  font-size: 12px !important;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
@@ -36,6 +37,7 @@
 .noteCardBody {
   -webkit-line-clamp: 6;
   padding: 0.5em 0.5em 0 0.5em;
+  height: 100%;
 }
 
 .newNoteBody {
@@ -71,6 +73,9 @@
   .noteCardBody {
     -webkit-line-clamp: 2;
   }
+  .noteCardBodyTextField {
+    height: 35%;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -87,6 +92,9 @@
   .noteCardBody {
     -webkit-line-clamp: 5;
   }
+  .noteCardBodyTextField {
+    height: 65%;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -100,4 +108,12 @@
   .noteCardBody {
     -webkit-line-clamp: 7;
   }
+  .noteCardBodyTextField {
+    height: 85%;
+  }
+}
+
+.noteCardTitleTextField,
+.noteCardBodyTextField {
+  width: 100% !important;
 }

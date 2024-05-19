@@ -1,7 +1,17 @@
-import TextField from "@mui/material/TextField";
-
-export default function UserTextField({ value, onchange }) {
+export default function UserTextArea({ value, onchange, className }) {
+  const textareaStyle = {
+    resize: "none",
+    background: "transparent",
+    border: "1px solid transparent",
+    padding: "10px",
+    borderRadius: "15px",
+  };
   return (
-    <TextField variant="standard" value={value} onChange={onchange}></TextField>
+    <textarea
+      style={textareaStyle}
+      value={value}
+      onChange={onchange}
+      className={className}
+    ></textarea>
   );
 }

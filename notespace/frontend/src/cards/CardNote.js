@@ -9,7 +9,7 @@ import "./styles.css";
 import { useState } from "react";
 import UserButtonDelete from "../buttons/userButtonDelete";
 import UserSaveButton from "../buttons/userButtonSave";
-import UserTextField from "../textfields/textField";
+import UserTextArea from "../textfields/textField";
 
 export default function CardNote({ note, component, url, toBeEdited }) {
   const [title, setTitle] = useState(note.title);
@@ -31,18 +31,24 @@ export default function CardNote({ note, component, url, toBeEdited }) {
           </CardActionArea>
         ) : (
           <CardContent className="noteCardContent">
-            <UserTextField
-              value={title}
-              onchange={(event) => {
-                setTitle(event.target.value);
-              }}
-            />
-            <UserTextField
-              value={body}
-              onchange={(event) => {
-                setBody(event.target.value);
-              }}
-            />
+            <Typography className="noteCardTitle">
+              <UserTextArea
+                value={title}
+                onchange={(event) => {
+                  setTitle(event.target.value);
+                }}
+                className="noteCardTitleTextField"
+              />
+            </Typography>
+            <Typography className="noteCardBody">
+              <UserTextArea
+                value={body}
+                onchange={(event) => {
+                  setBody(event.target.value);
+                }}
+                className="noteCardBodyTextField"
+              />
+            </Typography>
           </CardContent>
         )}
       </div>
