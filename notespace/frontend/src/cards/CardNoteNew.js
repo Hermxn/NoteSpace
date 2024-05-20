@@ -1,10 +1,10 @@
 import "./styles.css";
 
-export default function CardNoteNew({ url }) {
+export default function CardNoteNew({}) {
   return (
     <div className="CardNote">
-      <a className="CardNoteHref CardNoteNewHref" href={url}>
-        <div className="CardContent">Create note</div>
+      <a className="CardNoteHref CardNoteNewHref" href={"notes/create"}>
+        <div className="CardContent CardContentCreate">Create note</div>
       </a>
     </div>
   );

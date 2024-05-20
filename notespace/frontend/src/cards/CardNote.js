@@ -3,17 +3,17 @@ import UserButtonDelete from "../buttons/UserButtonDelete";
 import UserSaveButton from "../buttons/UserButtonSave";
 import TextField from "../textfields/UserTextField";
 import TextArea from "../textfields/UserTextArea";
-import "./styles.css";
 import sanitizeHtml from "sanitize-html";
+import "./styles.css";
 
-export default function CardNote({ note, url, toBeEdited }) {
-  const [title, setTitle] = useState(note.title);
-  const [body, setBody] = useState(note.body);
-  const date_updated = new Date(note.date_updated);
-  console.log(note);
+export default function CardNote({ note, url, toBeEdited, toBeCreated }) {
+  const [title, setTitle] = useState(note.title || "");
+  const [body, setBody] = useState(note.body || "");
+  const date_updated = new Date(note.date_updated || new Date());
+
   return (
     <div className="CardNote">
-      {!toBeEdited ? (
+      {!toBeEdited && !toBeCreated ? (
         <a className="CardNoteHref" href={url}>
           <div className="CardContent">
             <div className="CardContentDate">
@@ -42,8 +42,23 @@ export default function CardNote({ note, url, toBeEdited }) {
         </div>
       )}
       <div className="CardNoteAction">
-        {toBeEdited && <UserSaveButton note={note} title={title} body={body} />}
-        <UserButtonDelete note={note} />
+        {toBeEdited && (
+          <UserSaveButton
+            note={note}
+            title={title}
+            body={body}
+            method={"PUT"}
+          />
+        )}
+        {toBeCreated && (
+          <UserSaveButton
+            note={note}
+            title={title}
+            body={body}
+            method={"POST"}
+          />
+        )}
+        {!toBeCreated && <UserButtonDelete note={note} />}
       </div>
     </div>
   );

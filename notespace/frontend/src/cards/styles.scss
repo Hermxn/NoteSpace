@@ -25,6 +25,12 @@
   height: 86%;
 }
 
+.CardContentCreate {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .CardContent,
 .CardContentEdit {
   height: 100%;
@@ -73,10 +79,11 @@
   border-top: 1px solid black;
 }
 
-.CardContentTitle {
+.CardContentTitle,
+.CardContentCreate {
   font-size: 20px;
-  font-weight: bold;
   text-align: center;
+  font-weight: 600;
 }
 
 .CardContentBody {
