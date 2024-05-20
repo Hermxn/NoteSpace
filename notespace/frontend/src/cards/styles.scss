@@ -25,19 +25,19 @@
   height: 86%;
 }
 
-.CardContent {
+.CardContent,
+.CardContentEdit {
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
   overflow: hidden;
-  transition: background-color 0.2s ease;
-  position: relative;
   p {
-    padding: 0 5px 0 5px;
+    padding: 0 9px 0 9px;
     margin: 0;
   }
+  background-color: var(--color1);
 }
 
 .CardContent::before {
@@ -55,13 +55,11 @@
 .CardContent:hover::before {
   background-color: rgba(0, 0, 0, 0.1);
 }
-
 .CardContentDate {
   background-color: var(--color6);
+  text-align: right;
 }
 
-.CardContentTitle,
-.CardContentBody,
 .CardNoteAction {
   background-color: var(--color1);
 }
@@ -75,7 +73,14 @@
   border-top: 1px solid black;
 }
 
+.CardContentTitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .CardContentBody {
+  line-height: 1.25;
   flex-grow: 1;
   display: -webkit-box;
   -webkit-line-clamp: 10;

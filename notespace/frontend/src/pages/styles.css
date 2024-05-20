@@ -16,9 +16,10 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.wrapperNoteOne .noteCard {
+.wrapperNoteOne .CardNote {
   margin: 1vw 0 1vw 0;
   height: 95vh;
+  width: 75vw;
 }
 
 @media screen and (max-width: 767px) {
