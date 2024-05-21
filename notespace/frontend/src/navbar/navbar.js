@@ -22,10 +22,15 @@ export default function Navbar() {
       <Nav>
         {navItems.map((item, index) => (
           <Nav.Item key={index}>
-            <Button size="sm" variant="Text" startIcon={item.icon}>
-              <Link to={item.to} style={{ textDecoration: "none" }}>
-                {item.text}
-              </Link>
+            <Button
+              size="sm"
+              variant="text"
+              startIcon={item.icon}
+              component={Link}
+              to={item.to}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {item.text}
             </Button>
           </Nav.Item>
         ))}
