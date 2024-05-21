@@ -5,4 +5,6 @@
 *.env
 *.pre-commit-config.yaml
 docker-compose.yml
-*notespace/node_modules/
+*node_modules/
+*package-lock.json
+*package.json

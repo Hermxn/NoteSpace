@@ -1,10 +1,17 @@
 :root {
   --bg-color: #faeee7;
+  --bg-color-header: #fef6e4;
 }
 
 .wrapperFlex {
   display: flex;
   background-color: var(--bg-color);
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.wrapperContent {
+  display: flex;
 }
 
 .wrapperNotesAll {
@@ -12,19 +19,27 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin: 15px;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .wrapperNoteOne {
-  flex-grow: 1;
+  width: 100%;
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .wrapperNoteOne .CardNote {
-  margin: 1vw 0 1vw 0;
-  height: 95vh;
+  height: 86vh;
   width: 75vw;
+}
+
+.header {
+  font-size: 34px;
+  text-align: center;
+  background-color: #fef6e4;
+  padding-bottom: 8px;
 }
 
 @media screen and (max-width: 767px) {

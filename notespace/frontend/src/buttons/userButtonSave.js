@@ -2,6 +2,7 @@ import { usePutData, usePostData } from "../funcs";
 import { Button } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import endpoints from "../urls.json";
+import "./styles.css";
 
 export default function UserButtonSave({ note, title, body, method }) {
   const handlePut = usePutData(`${endpoints.notes}${note.id}/`, title, body);
@@ -19,6 +20,7 @@ export default function UserButtonSave({ note, title, body, method }) {
           handlePost();
         }
       }}
+      className="buttonSave"
     >
       Save
     </Button>

@@ -8,17 +8,20 @@ export default function NoteAllPage() {
 
   return (
     <div className="wrapperFlex">
-      <Navbar />
-      <div className="wrapperNotesAll">
-        <CardNoteNew />
-        {currentNotes.map((note) => (
-          <CardNote
-            key={note.id}
-            note={note}
-            url={`/notes/${note.id}`}
-            style={note.style}
-          />
-        ))}
+      <div className="header">My notes</div>
+      <div className="wrapperContent">
+        <Navbar />
+        <div className="wrapperNotesAll">
+          <CardNoteNew />
+          {currentNotes.map((note) => (
+            <CardNote
+              key={note.id}
+              note={note}
+              url={`/notes/${note.id}`}
+              style={note.style}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

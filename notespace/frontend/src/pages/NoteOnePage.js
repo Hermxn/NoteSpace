@@ -15,9 +15,12 @@ export default function NoteOnePage() {
 
   return (
     <div className="wrapperFlex">
-      <Navbar />
-      <div className="wrapperNoteOne">
-        <CardNote key={note?.id} note={note} toBeEdited style={style} />
+      <div className="header">{note.title}</div>
+      <div className="wrapperContent">
+        <Navbar />
+        <div className="wrapperNoteOne">
+          <CardNote key={note?.id} note={note} toBeEdited style={style} />
+        </div>
       </div>
     </div>
   );

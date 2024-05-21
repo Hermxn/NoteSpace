@@ -10,10 +10,10 @@ import {
 import "./styles.css";
 
 const navItems = [
-  { text: "Home", to: "/home", icon: <HomeIcon /> },
-  { text: "Diaries", to: "/diaries", icon: <BookIcon /> },
-  { text: "To-Do", to: "/todo", icon: <ListIcon /> },
+  { text: "Home", to: "#", icon: <HomeIcon /> },
   { text: "Note", to: "/notes", icon: <NoteIcon /> },
+  { text: "To-Do", to: "#", icon: <ListIcon /> },
+  { text: "Diary", to: "#", icon: <BookIcon /> },
 ];
 
 export default function Navbar() {
@@ -22,7 +22,7 @@ export default function Navbar() {
       <Nav>
         {navItems.map((item, index) => (
           <Nav.Item key={index}>
-            <Button variant="outlined" startIcon={item.icon}>
+            <Button size="sm" variant="Text" startIcon={item.icon}>
               <Link to={item.to} style={{ textDecoration: "none" }}>
                 {item.text}
               </Link>

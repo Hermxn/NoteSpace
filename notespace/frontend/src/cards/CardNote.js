@@ -14,10 +14,12 @@ export default function CardNote({
 }) {
   const [title, setTitle] = useState(note.title || "");
   const [body, setBody] = useState(note.body || "");
-  const date_updated = new Date(note.date_updated || new Date());
 
   return (
-    <div className="CardNote" style={style}>
+    <div
+      className="CardNote"
+      style={style || { backgroundColor: "whitesmoke" }}
+    >
       {!toBeEdited && !toBeCreated ? (
         <Link
           to={{
@@ -27,9 +29,6 @@ export default function CardNote({
           className="CardNoteHref"
         >
           <div className="CardContent">
-            <div className="CardContentDate">
-              <p>{date_updated.toLocaleDateString()}</p>
-            </div>
             <div className="CardContentTitle">
               <p>{title}</p>
             </div>

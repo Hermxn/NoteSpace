@@ -1,3 +1,5 @@
+import "./styles.css";
+
 export default function UserTextField({ value, onChange, className }) {
   const textareaStyle = {
     background: "transparent",

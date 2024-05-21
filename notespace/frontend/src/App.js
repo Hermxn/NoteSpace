@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="notes" element={<NoteAllPage />} />
-          <Route path="/notes/:noteId" element={<NoteOnePage />} />
+          <Route path="notes/:noteId" element={<NoteOnePage />} />
           <Route path="notes/create" element={<NoteCreatePage />} />
         </Routes>
       </Router>
