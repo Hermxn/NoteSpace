@@ -6,7 +6,7 @@ export default function usePostData(url, title, body) {
       await axios.post(url, { author: 1, title, body });
       window.location.href = "/notes";
     } catch (error) {
-      console.error("Failed to update note:", error);
+      console.error("Failed to create note:", error);
     }
   };
   return postData;

@@ -1,5 +1,10 @@
+:root {
+  --bg-color: #faeee7;
+}
+
 .wrapperFlex {
   display: flex;
+  background-color: var(--bg-color);
 }
 
 .wrapperNotesAll {

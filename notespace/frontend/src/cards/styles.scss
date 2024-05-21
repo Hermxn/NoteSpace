@@ -1,22 +1,17 @@
 :root {
-  --color1: #eae7dc;
-  --color2: #d8c3a5;
-  --color3: #8e8d8a;
-  --color4: #e98074;
-  --color5: #e85a4f;
-  --color6: #a4b3b6;
-  --color7: #c1c8e4;
-  --color8: #def2f1;
-  --color9: #a8d0e6;
-  --color10: #687864;
+  --note1-color: #c3f0ca;
+  --note2-color: #ffc6c7;
+  --note3-color: #f9bc60;
+  --note4-color: #d9d4e7;
+  --default-color: #ffffff;
 }
 
 .CardNote {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 15px;
+  border-radius: 7px;
   overflow: hidden;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .CardNoteHref {
@@ -61,13 +56,9 @@
 .CardContent:hover::before {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.CardContentDate {
-  background-color: var(--color6);
-  text-align: right;
-}
 
-.CardNoteAction {
-  background-color: var(--color1);
+.CardContentDate {
+  text-align: right;
 }
 
 .CardContentTitle,

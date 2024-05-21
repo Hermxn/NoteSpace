@@ -1,6 +1,6 @@
 import "./styles.css";
 import Navbar from "../navbar/navbar";
-import UserCardNote from "../cards/CardNote";
+import { CardNote } from "../cards";
 
 export default function NoteCreatePage() {
   console.log(new Date().toString());
@@ -8,7 +8,7 @@ export default function NoteCreatePage() {
     <div className="wrapperFlex">
       <Navbar />
       <div className="wrapperNoteOne">
-        <UserCardNote note={{ body: "", title: "" }} toBeCreated />
+        <CardNote note={{ body: "", title: "" }} toBeCreated />
       </div>
     </div>
   );

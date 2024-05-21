@@ -1,20 +1,23 @@
 import "./styles.css";
-import useFetchData from "../funcs/useFetchData";
 import Navbar from "../navbar/navbar";
-import endpoints from "../urls.json";
-import CardNote from "../cards/CardNote";
-import CardNoteNew from "../cards/CardNoteNew";
+import { CardNote, CardNoteNew } from "../cards";
+import { useNotes } from "../context/NotesContext";
 
 export default function NoteAllPage() {
-  const { data: notes, error } = useFetchData(endpoints.notes);
+  const { currentNotes } = useNotes();
 
   return (
     <div className="wrapperFlex">
       <Navbar />
       <div className="wrapperNotesAll">
         <CardNoteNew />
-        {notes.map((note) => (
-          <CardNote key={note.id} note={note} url={`/notes/${note.id}`} />
+        {currentNotes.map((note) => (
+          <CardNote
+            key={note.id}
+            note={note}
+            url={`/notes/${note.id}`}
+            style={note.style}
+          />
         ))}
       </div>
     </div>

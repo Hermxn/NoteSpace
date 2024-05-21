@@ -1,5 +1,3 @@
-import "./styles.css";
-
 export default function CardNoteNew({}) {
   return (
     <div className="CardNote">

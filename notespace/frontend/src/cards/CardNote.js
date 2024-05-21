@@ -1,20 +1,31 @@
 import React, { useState } from "react";
-import UserButtonDelete from "../buttons/UserButtonDelete";
-import UserSaveButton from "../buttons/UserButtonSave";
-import TextField from "../textfields/UserTextField";
-import TextArea from "../textfields/UserTextArea";
+import { Link } from "react-router-dom";
+import { UserButtonDelete, UserButtonSave } from "../buttons";
+import { UserTextArea, UserTextField } from "../textfields";
 import sanitizeHtml from "sanitize-html";
 import "./styles.css";
 
-export default function CardNote({ note, url, toBeEdited, toBeCreated }) {
+export default function CardNote({
+  note,
+  url,
+  toBeEdited,
+  toBeCreated,
+  style,
+}) {
   const [title, setTitle] = useState(note.title || "");
   const [body, setBody] = useState(note.body || "");
   const date_updated = new Date(note.date_updated || new Date());
 
   return (
-    <div className="CardNote">
+    <div className="CardNote" style={style}>
       {!toBeEdited && !toBeCreated ? (
-        <a className="CardNoteHref" href={url}>
+        <Link
+          to={{
+            pathname: url,
+            state: { style },
+          }}
+          className="CardNoteHref"
+        >
           <div className="CardContent">
             <div className="CardContentDate">
               <p>{date_updated.toLocaleDateString()}</p>
@@ -26,15 +37,15 @@ export default function CardNote({ note, url, toBeEdited, toBeCreated }) {
               <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(body) }} />
             </div>
           </div>
-        </a>
+        </Link>
       ) : (
         <div className="CardContentEdit">
-          <TextField
+          <UserTextField
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             className="noteCardTitleTextField"
           />
-          <TextArea
+          <UserTextArea
             value={body}
             onChange={setBody}
             className="noteCardBodyTextField"
@@ -43,7 +54,7 @@ export default function CardNote({ note, url, toBeEdited, toBeCreated }) {
       )}
       <div className="CardNoteAction">
         {toBeEdited && (
-          <UserSaveButton
+          <UserButtonSave
             note={note}
             title={title}
             body={body}
@@ -51,7 +62,7 @@ export default function CardNote({ note, url, toBeEdited, toBeCreated }) {
           />
         )}
         {toBeCreated && (
-          <UserSaveButton
+          <UserButtonSave
             note={note}
             title={title}
             body={body}

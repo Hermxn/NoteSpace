@@ -1,19 +1,23 @@
 import "./styles.css";
 import { useParams } from "react-router-dom";
-import useFetchData from "../funcs/useFetchData";
+import { useNotes } from "../context/NotesContext";
+import { CardNote } from "../cards";
 import Navbar from "../navbar/navbar";
-import endpoints from "../urls.json";
-import UserCardNote from "../cards/CardNote";
 
 export default function NoteOnePage() {
   const { noteId } = useParams();
-  const { data: note, error } = useFetchData(`${endpoints.notes}${noteId}/`);
+  const { currentNotes } = useNotes();
+  const note = currentNotes.find((note) => note.id === parseInt(noteId, 10));
+
+  const style = note?.style || {
+    backgroundColor: "var(--default-color)",
+  };
 
   return (
     <div className="wrapperFlex">
       <Navbar />
       <div className="wrapperNoteOne">
-        <UserCardNote key={note.id} note={note} toBeEdited />
+        <CardNote key={note?.id} note={note} toBeEdited style={style} />
       </div>
     </div>
   );

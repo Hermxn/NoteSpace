@@ -1,10 +1,9 @@
+import { usePutData, usePostData } from "../funcs";
 import { Button } from "@mui/material";
-import usePutData from "../funcs/usePutData";
-import usePostData from "../funcs/usePostData";
 import SaveIcon from "@mui/icons-material/Save";
 import endpoints from "../urls.json";
 
-export default function UserSaveButton({ note, title, body, method }) {
+export default function UserButtonSave({ note, title, body, method }) {
   const handlePut = usePutData(`${endpoints.notes}${note.id}/`, title, body);
   const handlePost = usePostData(`${endpoints.notes}`, title, body);
 
